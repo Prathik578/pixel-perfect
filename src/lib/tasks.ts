@@ -41,18 +41,18 @@ function isTask(value: unknown): value is Task {
   if (!value || typeof value !== "object") return false;
   const task = value as Record<string, unknown>;
   return (
-    typeof task.id === "string" &&
-    task.id.trim().length > 0 &&
-    typeof task.title === "string" &&
-    task.title.trim().length > 0 &&
-    typeof task.client === "string" &&
-    task.client.trim().length > 0 &&
-    isCalendarDate(task.deadline) &&
-    typeof task.notes === "string" &&
-    typeof task.status === "string" &&
-    statuses.has(task.status as TaskStatus) &&
-    typeof task.createdAt === "string" &&
-    !Number.isNaN(Date.parse(task.createdAt))
+    typeof task["id"] === "string" &&
+    task["id"].trim().length > 0 &&
+    typeof task["title"] === "string" &&
+    task["title"].trim().length > 0 &&
+    typeof task["client"] === "string" &&
+    task["client"].trim().length > 0 &&
+    isCalendarDate(task["deadline"]) &&
+    typeof task["notes"] === "string" &&
+    typeof task["status"] === "string" &&
+    statuses.has(task["status"] as TaskStatus) &&
+    typeof task["createdAt"] === "string" &&
+    !Number.isNaN(Date.parse(task["createdAt"]))
   );
 }
 
