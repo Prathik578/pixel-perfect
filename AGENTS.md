@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the client task board at `/`, isolate task validation and browser-storage operations in `src/lib/tasks.ts`, and access local storage only after the page mounts so server rendering remains safe.
